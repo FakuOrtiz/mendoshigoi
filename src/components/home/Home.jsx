@@ -7,6 +7,7 @@ import noPhoto from "../../assets/noPhoto.png";
 import styles from "./Home.module.css";
 import Loading from "../loading/Loading";
 import { Toaster } from "react-hot-toast";
+import NoSearch from "../noSearch/NoSearch";
 
 const Home = ({ postsLists, setPostsLists, postsSearch, setPostsSearch }) => {
   const postsCollectionRef = collection(db, "posts");
@@ -21,6 +22,7 @@ const Home = ({ postsLists, setPostsLists, postsSearch, setPostsSearch }) => {
   }, []);
 
   if (postsLists.length === 0) return <Loading />;
+  if (postsSearch.length === 0) return <NoSearch />;
 
   return (
     <div className={styles.container}>

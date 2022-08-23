@@ -27,7 +27,9 @@ const NavBar = ({ isAuth, setIsAuth, postsLists, setPostsSearch }) => {
         </NavLink>
       </div>
       <div className={styles.navContainer}>
-        <Search postsLists={postsLists} setPostsSearch={setPostsSearch} />
+        {postsLists.length > 0 && (
+          <Search postsLists={postsLists} setPostsSearch={setPostsSearch} />
+        )}
         <NavLink to="/" className={styles.linkBtn}>
           Inicio
         </NavLink>

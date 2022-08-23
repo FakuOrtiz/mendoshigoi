@@ -6,7 +6,6 @@ import Login from "./components/login/Login";
 import NavBar from "./components/navBar/NavBar";
 import { useEffect, useState } from "react";
 import Post from "./components/post/Post";
-import NavBarWithoutSearch from "./components/navBarWithoutSearch/NavBarWithoutSearch";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -20,67 +19,28 @@ function App() {
 
   return (
     <>
+      <NavBar
+        setIsAuth={setIsAuth}
+        isAuth={isAuth}
+        postsLists={postsLists}
+        setPostsSearch={setPostsSearch}
+      />
       <Routes>
         <Route
           path="/"
           element={
-            <>
-              <NavBar
-                setIsAuth={setIsAuth}
-                isAuth={isAuth}
-                postsLists={postsLists}
-                setPostsSearch={setPostsSearch}
-              />
-              <Home
-                postsLists={postsLists}
-                setPostsLists={setPostsLists}
-                postsSearch={postsSearch}
-                setPostsSearch={setPostsSearch}
-              />
-            </>
+            <Home
+              postsLists={postsLists}
+              setPostsLists={setPostsLists}
+              postsSearch={postsSearch}
+              setPostsSearch={setPostsSearch}
+            />
           }
         />
-        <Route
-          path="/createpost"
-          element={
-            <>
-              <NavBarWithoutSearch setIsAuth={setIsAuth} isAuth={isAuth} />
-              <CreatePost isAuth={isAuth} />
-            </>
-          }
-        />
-        <Route
-          path="/post/:id"
-          element={
-            <>
-              <NavBarWithoutSearch setIsAuth={setIsAuth} isAuth={isAuth} />
-              <Post />
-            </>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <>
-              <NavBarWithoutSearch setIsAuth={setIsAuth} isAuth={isAuth} />
-              <Login setIsAuth={setIsAuth} />
-            </>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <>
-              <NavBar
-                setIsAuth={setIsAuth}
-                isAuth={isAuth}
-                postsLists={postsLists}
-                setPostsSearch={setPostsSearch}
-              />
-              <Home />
-            </>
-          }
-        />
+        <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
+        <Route path="/post/:id" element={<Post />} />
+        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );

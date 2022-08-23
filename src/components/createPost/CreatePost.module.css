@@ -26,11 +26,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 55%;
 }
 
 .textarea {
   color: black;
-  height: 45vh;
+  height: 100%;
   width: 90%;
 }
 
@@ -95,6 +96,6 @@ input:hover {
     margin: 10vh 0 10vh 0;
   }
   .textarea {
-    margin-bottom: 4.5vh;
+    margin-bottom: 100px;
   }
 }

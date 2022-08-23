@@ -45,6 +45,13 @@
   width: 100%;
 }
 
+.btnContainerDelete {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .btnPost {
   width: fit-content;
   min-width: 100px;

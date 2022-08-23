@@ -14,6 +14,8 @@ const CreatePost = ({ isAuth }) => {
   const navigate = useNavigate();
   const postsCollectionRef = collection(db, "posts");
 
+  console.log(auth);
+
   const handlePost = async () => {
     try {
       await addDoc(postsCollectionRef, {
@@ -22,7 +24,9 @@ const CreatePost = ({ isAuth }) => {
         author: {
           name: auth.currentUser.displayName,
           id: auth.currentUser.uid,
+          photo: auth.currentUser.photoURL,
         },
+        date: new Date().toLocaleDateString("es-AR"),
       });
       navigate("/");
     } catch (error) {
@@ -60,7 +64,7 @@ const CreatePost = ({ isAuth }) => {
 
   useEffect(() => {
     if (!isAuth) {
-      navigate("/login");
+      navigate("/");
     }
   }, []);
 

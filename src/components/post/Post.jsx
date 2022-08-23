@@ -40,6 +40,9 @@ const Post = () => {
           <div>
             <p>Por {post.author?.name}</p>
           </div>
+          <div>
+            <img src={post.author?.photo} alt={post.author?.name} className={styles.photo} />
+          </div>
         </div>
       </div>
       <div className={styles.bodyContainer}>

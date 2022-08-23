@@ -6,6 +6,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { auth, db } from "../../firebaseconfig";
 import { useNavigate } from "react-router";
 import styles from "./CreatePost.module.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const CreatePost = ({ isAuth }) => {
   const [title, setTitle] = useState("");
@@ -15,6 +16,16 @@ const CreatePost = ({ isAuth }) => {
   const postsCollectionRef = collection(db, "posts");
 
   const handlePost = async () => {
+    if (title.length < 3) {
+      return toast.error("El título debe tener al menos 3 caracteres.");
+    }
+    if (title.length > 25) {
+      return toast.error("El título no puede tener más de 25 caracteres.");
+    }
+    if (body.length === 0) {
+      return toast.error("El cuerpo del post no puede estar vacío.");
+    }
+
     try {
       await addDoc(postsCollectionRef, {
         title,
@@ -27,6 +38,9 @@ const CreatePost = ({ isAuth }) => {
         date: new Date().toLocaleDateString("es-AR"),
       });
       navigate("/");
+      setTimeout(() => {
+        toast.success("¡Post creado correctamente!");
+      }, 1300);
     } catch (error) {
       console.log(error);
     }
@@ -96,6 +110,7 @@ const CreatePost = ({ isAuth }) => {
           </button>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

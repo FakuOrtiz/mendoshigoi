@@ -6,6 +6,7 @@ import { db } from "../../firebaseconfig";
 import noPhoto from "../../assets/noPhoto.png";
 import styles from "./Home.module.css";
 import Loading from "../loading/Loading";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   const [postsLists, setPostsLists] = useState([]);
@@ -54,6 +55,7 @@ const Home = () => {
           );
         })}
       </div>
+      <Toaster />
     </div>
   );
 };

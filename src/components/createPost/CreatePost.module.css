@@ -14,7 +14,7 @@
   border-radius: 20px;
   height: 80vh;
   width: 60vw;
-  margin: 4vh 0 4vh 0;
+  margin: 4vh 0;
 }
 
 .title {
@@ -92,10 +92,15 @@ input:hover {
 @media screen and (max-width: 897px) {
   .createPostContainer {
     width: 90vw;
-    height: 85vh;
+    height: 100vh;
     margin: 10vh 0 10vh 0;
   }
   .textarea {
     margin-bottom: 100px;
+    margin: 0;
+  }
+
+  .btnPost {
+    margin: 50px 0;
   }
 }

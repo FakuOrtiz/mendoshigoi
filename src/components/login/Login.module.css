@@ -11,9 +11,7 @@
   margin-top: 10vh;
   background-color: #ddd;
   border-radius: 20px;
-  box-shadow: 3px 3px 17px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 3px 3px 17px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 3px 3px 17px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
 }
 
 .btnContainer {

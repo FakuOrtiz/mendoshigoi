@@ -6,4 +6,24 @@
 
 body {
   background-color: #202c34;
+  color: white;
+}
+
+/* TEXTAREA STYLES */
+.ql-container {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+.ql-snow.ql-toolbar {
+  background: #eaecec;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+.ql-editor,
+.ql-blank {
+  background-color: white;
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
 }

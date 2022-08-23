@@ -21,23 +21,27 @@ const NavBar = ({ isAuth, setIsAuth }) => {
     <nav className={styles.container}>
       <div className={styles.logoContainer}>
         <img className={styles.logo} src={logo} alt="Mendoshigoi Logo" />
-        <h1 className={styles.title}>Mendoshigoi</h1>
+        <NavLink to="/" className={styles.title}>
+          <h1 className={styles.title}>Mendoshigoi</h1>
+        </NavLink>
       </div>
       <div className={styles.navContainer}>
         <NavLink to="/" className={styles.linkBtn}>
           Inicio
-        </NavLink>
-        <NavLink to="/createpost" className={styles.linkBtn}>
-          Postear
         </NavLink>
         {!isAuth ? (
           <NavLink to="/login" className={styles.linkBtn}>
             Iniciar sesión
           </NavLink>
         ) : (
-          <NavLink to="#" onClick={logOut} className={styles.linkBtn}>
-            Cerrar sesión
-          </NavLink>
+          <>
+            <NavLink to="/createpost" className={styles.linkBtn}>
+              Postear
+            </NavLink>
+            <NavLink to="#" onClick={logOut} className={styles.linkBtn}>
+              Cerrar sesión
+            </NavLink>
+          </>
         )}
         <div className={styles.burger}>
           <BurgerMenu logOut={logOut} isAuth={isAuth} />

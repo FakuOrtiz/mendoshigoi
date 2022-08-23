@@ -15,15 +15,12 @@
   height: 80vh;
   width: 60vw;
   margin: 4vh 0 4vh 0;
+  z-index: -2;
 }
 
 .title {
   margin: 20px;
 }
-/* 
-textarea {
-  resize: none;
-} */
 
 .textareaContainer {
   margin: 10px 0 50px 0;
@@ -36,6 +33,7 @@ textarea {
   color: black;
   height: 45vh;
   width: 90%;
+  z-index: -1;
 }
 
 /*----------------------- TITLE INPUT ----------------------- */
@@ -76,12 +74,10 @@ input:hover {
   border-radius: 5px;
   border: 2.5px solid #e0e1e4;
   box-shadow: 0px 0px 20px -20px;
-
   cursor: pointer;
   background-color: white;
   transition: all 0.2s ease-in-out 0ms;
   user-select: none;
-  font-family: "Poppins", sans-serif;
 }
 
 .btnPost:hover {
@@ -93,6 +89,7 @@ input:hover {
   transform: scale(0.95);
 }
 
+/*----------------------- MEDIA QUERIES ----------------------- */
 @media screen and (max-width: 897px) {
   .createPostContainer {
     width: 90vw;

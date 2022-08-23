@@ -19,13 +19,15 @@ const BurgerMenu = ({ logOut, isAuth }) => {
       <NavLink to="/" onClick={closeSideBar} className="burger-option">
         Inicio
       </NavLink>
-      <NavLink
-        to="/createpost"
-        onClick={closeSideBar}
-        className="burger-option"
-      >
-        Postear
-      </NavLink>
+      {isAuth && (
+        <NavLink
+          to="/createpost"
+          onClick={closeSideBar}
+          className="burger-option"
+        >
+          Postear
+        </NavLink>
+      )}
       {!isAuth ? (
         <NavLink to="/login" onClick={closeSideBar} className="burger-option">
           Iniciar sesión

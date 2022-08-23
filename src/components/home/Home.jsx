@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebaseconfig";
 import noPhoto from "../../assets/noPhoto.png";
 import styles from "./Home.module.css";
+import Loading from "../loading/Loading";
 
 const Home = () => {
   const [postsLists, setPostsLists] = useState([]);
@@ -17,6 +18,8 @@ const Home = () => {
     };
     getPosts();
   }, []);
+
+  if (postsLists.length === 0) return <Loading />;
 
   return (
     <div className={styles.container}>

@@ -1,0 +1,17 @@
+.container {
+  margin-top: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loading {
+    width: 50%;
+}
+
+@media screen and (max-width: 645px) {
+    .loading {
+        width: 100%;
+    }
+}

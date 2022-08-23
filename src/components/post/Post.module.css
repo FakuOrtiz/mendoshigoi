@@ -39,6 +39,10 @@
   flex-wrap: wrap;
 }
 
+.bodyContainer * {
+  color: white;
+}
+
 /*----------------------- BUTTON BACK ----------------------- */
 .btnContainer {
   display: flex;

@@ -1,0 +1,64 @@
+.container {
+  margin-top: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleContainer > div > h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.titleContainer > div > p {
+  font-style: italic;
+}
+
+.bodyContainer {
+  width: 90%;
+  margin: 50px 0;
+  word-wrap: break-word;
+}
+
+.bodyContainer > div {
+  white-space: initial;
+  flex-wrap: wrap;
+}
+
+/*----------------------- BUTTON BACK ----------------------- */
+.btnContainer {
+  display: flex;
+  width: 100%;
+}
+
+.btnPost {
+  width: fit-content;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #e0e1e4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  margin: 30px;
+}
+
+.btnPost:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.btnPost:active {
+  transform: scale(0.95);
+}

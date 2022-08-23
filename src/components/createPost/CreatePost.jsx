@@ -14,8 +14,6 @@ const CreatePost = ({ isAuth }) => {
   const navigate = useNavigate();
   const postsCollectionRef = collection(db, "posts");
 
-  console.log(auth);
-
   const handlePost = async () => {
     try {
       await addDoc(postsCollectionRef, {

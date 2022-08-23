@@ -21,12 +21,18 @@
   height: 300px;
   border-radius: 20px;
   cursor: pointer;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .imgNameContainer {
   display: flex;
   flex-direction: column;
   background-color: #f04c04;
+  color: white;
   align-items: center;
   padding: 10px;
   overflow: hidden;
@@ -46,5 +52,4 @@
   align-items: center;
   height: 53%;
   color: black;
-  
 }

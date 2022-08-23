@@ -13,7 +13,6 @@ const Login = ({ setIsAuth }) => {
         localStorage.setItem("isAuth", true);
         setIsAuth(true);
         navigate("/");
-        console.log(res.user.displayName);
       })
       .catch((err) => console.log(err));
   };

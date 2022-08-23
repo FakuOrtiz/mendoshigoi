@@ -5,6 +5,7 @@ import CreatePost from "./components/createPost/CreatePost";
 import Login from "./components/login/Login";
 import NavBar from "./components/navBar/NavBar";
 import { useEffect, useState } from "react";
+import Post from "./components/post/Post";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
+        <Route path="/post/:id" element={<Post />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="*" element={<Home />} />
       </Routes>

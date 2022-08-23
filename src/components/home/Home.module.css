@@ -1,16 +1,16 @@
 .container {
   margin-top: 12vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   gap: 50px;
   margin: 10vh 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .individualContainer {

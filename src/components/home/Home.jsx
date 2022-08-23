@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { NavLink } from "react-router-dom";
 import { db } from "../../firebaseconfig";
@@ -8,15 +8,14 @@ import styles from "./Home.module.css";
 import Loading from "../loading/Loading";
 import { Toaster } from "react-hot-toast";
 
-const Home = () => {
-  const [postsLists, setPostsLists] = useState([]);
-
+const Home = ({ postsLists, setPostsLists, postsSearch, setPostsSearch }) => {
   const postsCollectionRef = collection(db, "posts");
 
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostsLists(data.docs?.map((d) => ({ ...d.data(), id: d.id })));
+      setPostsSearch(data.docs?.map((d) => ({ ...d.data(), id: d.id })));
     };
     getPosts();
   }, []);
@@ -26,7 +25,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.cardContainer}>
-        {postsLists?.map((p) => {
+        {postsSearch?.map((p) => {
           return (
             <NavLink to={`/post/${p.id}`} key={p.id} className={styles.link}>
               <div className={styles.individualContainer}>

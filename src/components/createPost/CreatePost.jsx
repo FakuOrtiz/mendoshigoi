@@ -19,8 +19,8 @@ const CreatePost = ({ isAuth }) => {
     if (title.length < 3) {
       return toast.error("El título debe tener al menos 3 caracteres.");
     }
-    if (title.length > 25) {
-      return toast.error("El título no puede tener más de 25 caracteres.");
+    if (title.length > 40) {
+      return toast.error("El título no puede tener más de 40 caracteres.");
     }
     if (body.length === 0) {
       return toast.error("El cuerpo del post no puede estar vacío.");

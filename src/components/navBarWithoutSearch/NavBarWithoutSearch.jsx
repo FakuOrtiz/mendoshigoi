@@ -2,12 +2,11 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseconfig";
-import styles from "./NavBar.module.css";
+import styles from "./NavBarWithoutSearch.module.css";
 import logo from "../../assets/logo.png";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
-import Search from "../search/Search";
 
-const NavBar = ({ isAuth, setIsAuth, postsLists, setPostsSearch }) => {
+const NavBarWithoutSearch = ({ isAuth, setIsAuth }) => {
   const navigate = useNavigate();
 
   const logOut = () => {
@@ -27,7 +26,6 @@ const NavBar = ({ isAuth, setIsAuth, postsLists, setPostsSearch }) => {
         </NavLink>
       </div>
       <div className={styles.navContainer}>
-        <Search postsLists={postsLists} setPostsSearch={setPostsSearch} />
         <NavLink to="/" className={styles.linkBtn}>
           Inicio
         </NavLink>
@@ -53,4 +51,4 @@ const NavBar = ({ isAuth, setIsAuth, postsLists, setPostsSearch }) => {
   );
 };
 
-export default NavBar;
+export default NavBarWithoutSearch;
